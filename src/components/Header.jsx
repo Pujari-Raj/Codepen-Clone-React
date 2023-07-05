@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Typography, Stack } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Typography, Stack,Link } from "@mui/material";
 import Button from '@mui/joy/Button';
 import Box from '@mui/joy/Box';
-import { Cloud, Settings,ViewComfy } from "@mui/icons-material";
+import { Cloud, Settings, ViewComfy,Create } from "@mui/icons-material";
 import styled from '@emotion/styled';
 
 const Header = () => {
@@ -16,23 +16,27 @@ const Header = () => {
                 <Toolbar>
                     <IconButton size="large" edge="start" color="inherit" aria-label="logo">
                         <a href="#">
-                            <img src={logo} style={{ width: 40 }} />
+                            <img src={logo} style={{ width: 35 }} />
                         </a>
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 2 }}>
+                    <Typography variant="" component="div" sx={{ flexGrow: 2 }}>
                         <Stack direction="" >
-                            <Stack direction='column' spacing='0px' justifyContent='center'>
-                                <h1 style={{ fontSize: 18 }}>Untitled</h1>
-                                <p style={{ fontSize: 15, marginBottom: 8 }}>Captain Anonymous</p>
+                            <Stack direction='column' spacing=''>
+                                <Typography variant='h5' component="">
+                                    <Link href="#" style={{ fontWeight: 500, fontSize: 22 }} underline="none" color='white'>
+                                       Untitled <Create style={{ fontSize: 18 }}></Create>
+                                    </Link>
+                                </Typography>
+                                <span style={{ fontSize: 15, marginBottom: 8 }}>Captain Anonymous</span>
                             </Stack>
                         </Stack>
                     </Typography>
                     <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-                        <Button color='neutral' startDecorator={<Cloud />}>Save</Button>
-                        <Button color='neutral' startDecorator={<Settings />}>Settings</Button>
-                        <Button color='neutral' startDecorator={<ViewComfy/>} ></Button>
-                        <Button color='success'>Sign Up</Button>
-                        <Button color='neutral'>Log In</Button>
+                        <Button color='neutral' style={{fontFamily: "Montserrat"}} startDecorator={<Cloud />}>Save</Button>
+                        <Button color='neutral' style={{fontFamily: "Montserrat"}} startDecorator={<Settings />}>Settings</Button>
+                        <Button color='neutral' startDecorator={<ViewComfy />}></Button>
+                        <Button color='success' style={{fontFamily: "Montserrat"}}>Sign Up</Button>
+                        <Button color='neutral' style={{fontFamily: "Montserrat"}}>Log In</Button>
                     </Box>
                 </Toolbar>
             </AppBar>
