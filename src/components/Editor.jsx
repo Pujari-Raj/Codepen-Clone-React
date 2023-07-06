@@ -45,7 +45,7 @@ const Editor = () => {
             {/* <Box>
 
             </Box> */}
-            {/* <ControlledEditor className='controlled-editor'/> */}
+            <ControlledEditor className='controlled-editor'/>
         </Box>
     </div>
   )
