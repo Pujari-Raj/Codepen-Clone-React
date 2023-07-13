@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react';
 
 const Datacontext = createContext();
 
-const DataProvider = () => {
+const DataProvider = ({children}) => {
 
     const [html, setHtml] = useState('');
     const [css, setCss] = useState('');
@@ -19,6 +19,7 @@ const DataProvider = () => {
                 setJs
             }}
         >
+            {children}
         </Datacontext.Provider>
     </div>
   )
