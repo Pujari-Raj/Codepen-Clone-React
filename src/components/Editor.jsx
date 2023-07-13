@@ -4,7 +4,8 @@ import { CloseFullscreen } from "@mui/icons-material";
 import {Controlled as ControlledEditor, Controlled} from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
-// import {  } from "code";
+import "../App.css";
+
 // 
 const Heading = styled(Box)`
     background: #1d1e22;
@@ -45,7 +46,11 @@ const Editor = () => {
             {/* <Box>
 
             </Box> */}
-            <ControlledEditor className='controlled-editor'/>
+            <ControlledEditor className='controlled-editor'
+            options={{
+                theme: 'material',
+                lineNumbers: true
+            }}/>
         </Box>
     </div>
   )
