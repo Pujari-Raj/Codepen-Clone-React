@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Box, styled } from "@mui/material";
-import { CloseFullscreen } from "@mui/icons-material";
+import { CloseFullscreen, Settings } from "@mui/icons-material";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Controlled as ControlledEditor, Controlled } from 'react-codemirror2'
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
@@ -26,6 +27,13 @@ const Container = styled(Box)`
     padding: 0 8px 8px;
 `;
 
+const ToolBox = styled(Box)`
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
+`;
+
+
 const Editor = ({ heading, icon, color, value, onChange }) => {
 
     const [open, setOpen] = useState(true);
@@ -35,8 +43,8 @@ const Editor = ({ heading, icon, color, value, onChange }) => {
     }
     return (
         // <div>
-        <Container style={open ? null : {flexGrow: 0}}>
-            <Header>
+        <Container style={open ? null : { flexGrow: 0 }}>
+            <Header >
                 <Heading>
                     <Box component='span'
                         style={{
@@ -55,8 +63,28 @@ const Editor = ({ heading, icon, color, value, onChange }) => {
                     </Box>
                     {heading}
                 </Heading>
-                <CloseFullscreen fontSize='small' style={{ alignSelf: 'center'}}
-                onClick= {() => setOpen(prevState => !prevState)} />
+
+                <ToolBox >
+                    <Settings style={{ alignSelf: 'center',
+                                background: '#1D1E22',
+                                // height: 20,
+                                width: 30,
+                                borderRadius: 2,
+                                cursor: 'pointer',
+                                padding: 2 }} 
+                    fontSize='small' />
+                    {/* <CloseFullscreen fontSize='small' 
+                    style={{ alignSelf: 'center' }} onClick={() => setOpen(prevState => !prevState)} 
+                    /> */}
+                    <KeyboardArrowDownIcon 
+                    style={{ alignSelf: 'center', 
+                            background: '#1D1E22',
+                            // height: 20,
+                            width: 30,
+                            borderRadius: 2,
+                            cursor: 'pointer' }}
+                    fontSize='medium' onClick={() => setOpen(prevState => !prevState)} />
+                </ToolBox>
             </Header>
 
             <ControlledEditor className='controlled-editor'
