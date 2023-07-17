@@ -32,7 +32,6 @@ const Code = () => {
   return (
     <Container style={{ height: 385}}>
       <SplitPane split='vertical' sizes={sizes} onChange={setSizes}>
-        
         <Editor
           heading="HTML"
           icon="/"
