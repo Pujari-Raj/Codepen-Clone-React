@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { Box, styled } from "@mui/material";
 import { CloseFullscreen, Settings } from "@mui/icons-material";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Controlled as ControlledEditor, Controlled } from 'react-codemirror2'
+import { Controlled as ControlledEditor, Controlled } from 'react-codemirror2';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import "../App.css";
+import CodeMirror from 'codemirror';
 
 // 
 const Heading = styled(Box)`
@@ -43,7 +44,7 @@ const Editor = ({ heading, icon, color, value, onChange }) => {
     }
     return (
         // <div>
-        <Container style={open ? null : { flexGrow: 0 }}>
+        <Container style={open ? null : { flexGrow: 0 }} >
             <Header >
                 <Heading>
                     <Box component='span'
@@ -71,19 +72,19 @@ const Editor = ({ heading, icon, color, value, onChange }) => {
                                 width: 30,
                                 borderRadius: 2,
                                 cursor: 'pointer',
-                                padding: 2 }} 
-                    fontSize='small' />
-                    {/* <CloseFullscreen fontSize='small' 
-                    style={{ alignSelf: 'center' }} onClick={() => setOpen(prevState => !prevState)} 
-                    /> */}
+                                padding: 3,
+                                fontSize: 15 }} 
+                     />
                     <KeyboardArrowDownIcon 
                     style={{ alignSelf: 'center', 
                             background: '#1D1E22',
-                            // height: 20,
                             width: 30,
                             borderRadius: 2,
-                            cursor: 'pointer' }}
-                    fontSize='medium' onClick={() => setOpen(prevState => !prevState)} />
+                            cursor: 'pointer',
+                            padding: 2,
+                            fontSize: 16
+                         }}
+                     onClick={() => setOpen(prevState => !prevState)} />
                 </ToolBox>
             </Header>
 
