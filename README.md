@@ -17,7 +17,7 @@ Learnings from this projects:-
 * What is Splitplane library and Usage of Library.
 * Fundamentals Of Material UI Library.
 
-## Note
+### Note
 * The reason of not hosting this web app is due to the conflicts of the dependency of codemirror that it doesn't support react version >17 and mui doesn't support version <16.
 * Due to this reasons unfortunately i wasn't able to host this application.(PS: I tried debugging for this issues but at the end I couldn't host it.), but you can try hands on experience of this app by just making a clone of this repository and npm i command.
 
